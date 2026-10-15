@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio - นิยตา หอมเหล็ก</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt & Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #fafafa;
+            color: #27272a;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 63, 94, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-zinc-200/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="#hero" class="text-lg font-bold text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-500 to-rose-400 text-white flex items-center justify-center font-bold text-sm shadow-md">NH</span>
+                    <span>Niyata <span class="text-brand-600">Homlek</span></span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-zinc-600">
+                    <a href="#about" class="hover:text-brand-600 transition-colors py-1">ประวัติส่วนตัว</a>
+                    <a href="#education" class="hover:text-brand-600 transition-colors py-1">การศึกษา</a>
+                    <a href="#experience" class="hover:text-brand-600 transition-colors py-1">ประสบการณ์</a>
+                    <a href="#skills" class="hover:text-brand-600 transition-colors py-1">ทักษะ & สิ่งที่ชอบ</a>
+                    <a href="#contact" class="hover:text-brand-600 transition-colors py-1">ติดต่อ</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-zinc-600 hover:text-brand-600 hover:bg-zinc-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-200 bg-white/95 px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#about" class="block py-2 text-zinc-600 hover:text-brand-600 border-b border-zinc-100">ประวัติส่วนตัว</a>
+            <a href="#education" class="block py-2 text-zinc-600 hover:text-brand-600 border-b border-zinc-100">การศึกษา</a>
+            <a href="#experience" class="block py-2 text-zinc-600 hover:text-brand-600 border-b border-zinc-100">ประสบการณ์</a>
+            <a href="#skills" class="block py-2 text-zinc-600 hover:text-brand-600 border-b border-zinc-100">ทักษะ & สิ่งที่ชอบ</a>
+            <a href="#contact" class="block py-2 text-zinc-600 hover:text-brand-600">ติดต่อ</a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- Hero & Profile Section -->
+        <section id="hero" class="pt-6">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-sm border border-rose-100 bg-gradient-to-br from-white via-rose-50/30 to-rose-100/20">
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <!-- Profile Image with Decorative Frame -->
+                    <div class="relative shrink-0">
+                        <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-brand-500 to-rose-300 opacity-75 blur-md"></div>
+                        <img src="profile.jpg" 
+                             alt="นางสาวนิยตา หอมเหล็ก" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffe4e6/be123c?text=Niyata+H.';"
+                             class="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-xl">
+                        <span class="absolute bottom-2 right-2 bg-brand-600 text-white p-2.5 rounded-full shadow-lg text-xs" title="นักศึกษาสาธารณสุขชุมชน">
+                            <i class="fa-solid fa-user-nurse text-base"></i>
+                        </span>
+                    </div>
+
+                    <!-- Intro Text -->
+                    <div class="space-y-4 text-center md:text-left flex-1">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100/80 text-brand-700 text-xs font-semibold">
+                            <i class="fa-solid fa-graduation-cap"></i> Academic Portfolio
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+                            นางสาวนิยตา หอมเหล็ก
+                        </h1>
+                        <p class="text-brand-600 font-medium text-lg">
+                            นักศึกษาสาขาการสาธารณสุขชุมชน
+                        </p>
+                        <p class="text-zinc-600 text-sm leading-relaxed max-w-2xl">
+                            วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น<br class="hidden sm:block">
+                            คณะสาธารณสุขศาสตร์และสหเวชศาสตร์ สถาบันพระบรมราชชนก กระทรวงสาธารณสุข
+                        </p>
+
+                        <!-- Quote / Motto -->
+                        <div class="p-4 rounded-2xl bg-white/70 border-l-4 border-brand-500 text-zinc-700 text-sm italic shadow-sm mt-4">
+                            <i class="fa-solid fa-quote-left text-brand-300 mr-2"></i>
+                            "อย่าทิ้งความฝัน เพียงเพราะเราไม่มีเพื่อน"
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                            <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-all shadow-md hover:shadow-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>คัดลอกอีเมล</span>
+                            </button>
+                            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-50 text-zinc-700 border border-zinc-200 text-sm font-medium transition-all">
+                                <i class="fa-solid fa-location-dot text-brand-500"></i>
+                                <span>ข้อมูลการติดต่อ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Details Grid -->
+        <section id="about" class="space-y-6">
+            <div class="border-b border-zinc-200 pb-3 flex items-center gap-3">
+                <div class="w-3 h-8 bg-brand-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-zinc-900">ข้อมูลส่วนตัว (Personal Details)</h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm flex items-center gap-4 hover:border-rose-200 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-rose-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-medium text-zinc-400">อายุ</div>
+                        <div class="text-base font-semibold text-zinc-800">19 ปี</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm flex items-center gap-4 hover:border-rose-200 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-rose-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-medium text-zinc-400">กรุ๊ปเลือด</div>
+                        <div class="text-base font-semibold text-zinc-800">O (โอ)</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm flex items-center gap-4 hover:border-rose-200 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-rose-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-ruler-vertical"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-medium text-zinc-400">ส่วนสูง / น้ำหนัก</div>
+                        <div class="text-base font-semibold text-zinc-800">159 ซม. / 63 กก.</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm flex items-center gap-4 hover:border-rose-200 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-rose-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-medium text-zinc-400">เป้าหมายในชีวิต</div>
+                        <div class="text-base font-semibold text-zinc-800">อยากรวย มีงานที่มั่นคง</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="space-y-6">
+            <div class="border-b border-zinc-200 pb-3 flex items-center gap-3">
+                <div class="w-3 h-8 bg-brand-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-zinc-900">ประวัติการศึกษา (Education)</h2>
+            </div>
+
+            <div class="relative border-l-2 border-brand-200 ml-4 sm:ml-6 space-y-8 pl-6 sm:pl-8 py-2">
+                
+                <!-- Current Study -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-600 border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm group-hover:border-rose-300 transition-all">
+                        <span class="inline-block px-3 py-1 bg-brand-100 text-brand-700 text-xs font-semibold rounded-full mb-2">ปัจจุบัน (ระดับปริญญาตรี)</span>
+                        <h3 class="text-lg font-bold text-zinc-900">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h3>
+                        <p class="text-sm text-zinc-600 font-medium mt-1">สาขาวิชาสาธารณสุขชุมชน</p>
+                        <p class="text-xs text-zinc-400 mt-2">คณะสาธารณสุขศาสตร์และสหเวชศาสตร์ สถาบันพระบรมราชชนก</p>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-300 border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm group-hover:border-rose-200 transition-all">
+                        <span class="text-xs font-medium text-zinc-400">ปีการศึกษา 2565 - 2567</span>
+                        <h3 class="text-base font-bold text-zinc-800">ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h3>
+                        <p class="text-sm text-zinc-600 mt-1">โรงเรียนเตรียมอุดมศึกษาภาคตะวันออกเฉียงเหนือ</p>
+                    </div>
+                </div>
+
+                <!-- Middle School -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-200 border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm group-hover:border-rose-200 transition-all">
+                        <span class="text-xs font-medium text-zinc-400">ปีการศึกษา 2561 - 2564</span>
+                        <h3 class="text-base font-bold text-zinc-800">ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</h3>
+                        <p class="text-sm text-zinc-600 mt-1">โรงเรียนบ้านง่อนหนองพะเนาว์มิตรภาพที่ 126</p>
+                    </div>
+                </div>
+
+                <!-- Primary School -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-zinc-300 border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-2xl border border-zinc-100 shadow-sm group-hover:border-rose-200 transition-all">
+                        <span class="text-xs font-medium text-zinc-400">ปีการศึกษา 2552 - 2560</span>
+                        <h3 class="text-base font-bold text-zinc-800">ระดับประถมศึกษา (ป.1 - ป.6)</h3>
+                        <p class="text-sm text-zinc-600 mt-1">โรงเรียนภูพานหลวง</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience & Skills Section (2 Columns) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Work Experience -->
+            <section id="experience" class="space-y-6">
+                <div class="border-b border-zinc-200 pb-3 flex items-center gap-3">
+                    <div class="w-3 h-8 bg-brand-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-zinc-900">ประสบการณ์การทำงาน</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-5 bg-white rounded-2xl border border-zinc-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-brand-600 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-glass-water"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-800">พนักงานขายน้ำปั่น</h3>
+                            <p class="text-xs text-zinc-500 mt-1">บริการลูกค้า จัดทำเครื่องดื่ม และดูแลความสะอาดเรียบร้อยของร้าน</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-white rounded-2xl border border-zinc-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-brand-600 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-bowl-food"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-800">ทำงานร้านก๋วยเตี๋ยว</h3>
+                            <p class="text-xs text-zinc-500 mt-1">ดูแลต้อนรับลูกค้า รับออเดอร์ บริการเสิร์ฟ และช่วยงานทั่วไปในร้าน</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-white rounded-2xl border border-zinc-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-brand-600 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-800">ทำงานร้านอาหาร</h3>
+                            <p class="text-xs text-zinc-500 mt-1">จัดการคิว ทำงานร่วมกับทีม และให้บริการลูกค้าด้วยความเต็มใจ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills & Special Abilities -->
+            <section id="skills" class="space-y-6">
+                <div class="border-b border-zinc-200 pb-3 flex items-center gap-3">
+                    <div class="w-3 h-8 bg-brand-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-zinc-900">ความสามารถพิเศษ & ความชอบ</h2>
+                </div>
+
+                <!-- Abilities -->
+                <div class="bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm space-y-4">
+                    <h3 class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">ความสามารถพิเศษ</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 rounded-xl bg-rose-50 text-brand-700 text-sm font-medium border border-rose-100 flex items-center gap-2">
+                            <i class="fa-solid fa-fan text-brand-500"></i> รำไทย
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-rose-50 text-brand-700 text-sm font-medium border border-rose-100 flex items-center gap-2">
+                            <i class="fa-solid fa-utensils text-brand-500"></i> ทำอาหาร
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-rose-50 text-brand-700 text-sm font-medium border border-rose-100 flex items-center gap-2">
+                            <i class="fa-solid fa-music text-brand-500"></i> เล่นดนตรีไทย
+                        </span>
+                    </div>
+
+                    <!-- Personal Interests -->
+                    <div class="pt-4 border-t border-zinc-100 space-y-3">
+                        <h3 class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">สิ่งที่ชอบ & ไลฟ์สไตล์</h3>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-person-walking text-brand-500"></i> เดินเที่ยว
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-banana text-amber-500"></i> ชอบกินกล้วย
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-drumstick-bite text-amber-600"></i> ข้าวมันไก่
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-zinc-100 text-zinc-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-pepper-hot text-red-500"></i> หม่าล่า
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Favorite Colors -->
+                    <div class="pt-4 border-t border-zinc-100 flex items-center gap-3">
+                        <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">สีที่ชอบ:</span>
+                        <div class="flex items-center gap-2 text-xs font-medium">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-100 text-pink-700">
+                                <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> สีชมพู
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> สีแดง
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="space-y-6">
+            <div class="border-b border-zinc-200 pb-3 flex items-center gap-3">
+                <div class="w-3 h-8 bg-brand-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-zinc-900">ช่องทางการติดต่อ (Contact)</h2>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-zinc-100 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Address -->
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-zinc-800 text-sm">ที่อยู่</h3>
+                        <p class="text-sm text-zinc-600 mt-1 leading-relaxed">
+                            90/1 หมู่ 4 ถนนอนามัย ตำบลในเมือง<br>
+                            อำเภอเมืองขอนแก่น จังหวัดขอนแก่น 40000
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-zinc-800 text-sm">อีเมลนักศึกษา</h3>
+                        <a href="mailto:69202302049@scphkk.ac.th" class="text-sm text-brand-600 hover:underline mt-1 block font-medium break-all">
+                            69202302049@scphkk.ac.th
+                        </a>
+                        <button onclick="copyEmail()" class="text-xs text-zinc-400 hover:text-zinc-600 mt-2 flex items-center gap-1 transition-colors">
+                            <i class="fa-regular fa-copy"></i> คลิกเพื่อคัดลอกอีเมล
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-zinc-200/80 py-8 text-center text-xs text-zinc-400">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© 2026 นางสาวนิยตา หอมเหล็ก. All rights reserved.</p>
+            <p class="mt-1 text-zinc-400">สาขาวิชาสาธารณสุขชุมชน วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-zinc-900 text-white px-5 py-3 rounded-xl shadow-xl text-sm transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span>คัดลอกอีเมลเรียบร้อยแล้ว!</span>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Mobile Navigation Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Copy Email function with Fallback
+        function copyEmail() {
+            const email = "69202302049@scphkk.ac.th";
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+
+            // Show Toast
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
